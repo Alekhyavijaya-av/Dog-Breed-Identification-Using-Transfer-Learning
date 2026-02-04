@@ -1,0 +1,68 @@
+from IPython.display import HTML, display
+
+styles = """
+<style>
+/* General Page Style */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Center Container */
+.container {
+    width: 50%;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+/* Buttons */
+button {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e68900;
+}
+
+/* File Upload */
+input[type="file"] {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/* Prediction Result */
+.result {
+    font-size: 22px;
+    color: green;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: gray;
+}
+</style>
+"""
+
+display(HTML(styles))
