@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dog Breed Classifier</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+        .preview { max-width: 300px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Identify Your Dog's Breed</h1>
+    <form id="upload-form" enctype="multipart/form-data">
+        <input type="file" name="file" id="file-input">
+        <button type="submit">Predict</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        const form = document.getElementById('upload-form');
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const res = await fetch('/predict', { method: 'POST', body: formData });
+            const data = await res.json();
+            document.getElementById('result').innerHTML = `<h3>Prediction: ${data.breed}</h3>`;
+        };
+    </script>
+</body>
+</html>
